@@ -11,6 +11,11 @@
 
 namespace Leg\SimHash;
 
+/**
+ * A SimHash fingerprint representation
+ * 
+ * @author Titouan Galopin <http://titouangalopin.com/>
+ */
 class SimHash
 {
 	/**
@@ -25,23 +30,28 @@ class SimHash
 	
 	public function compareWith(SimHash $otherHash)
 	{
-		$differences = substr_count(decbin($this->getFingerprint() ^ $otherHash->getFingerprint()), '1');
-		$fpLength = strlen((string) decbin($this->getFingerprint()));
+		$differences = substr_count(decbin($this->getDec() ^ $otherHash->getDec()), '1');
+		$fpLength = strlen((string) decbin($this->getDec())) * 2;
 		
-		return $differences / $fpLength;
+		return 1 - ($differences / $fpLength);
 	}
 	
 	public function __toString()
 	{
-		return $this->getFingerprint();
+		return $this->getDec();
 	}
 	
-	public function getBinary()
+	public function getBin()
 	{
-		return decbin($this->getFingerprint());
+		return decbin($this->getDec());
 	}
 	
-	public function getFingerprint()
+	public function getHex()
+	{
+		return dechex($this->getDec());
+	}
+	
+	public function getDec()
 	{
 		return $this->fingerprint;
 	}
