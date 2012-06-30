@@ -7,7 +7,7 @@ What is SimHashPhp ?
 SimHashPhp is a simple library for PHP 5.3 that provide a useful feature : the
 similarity hashing (to compare two texts quickly).
 
-[![Build Status](https://secure.travis-ci.org/tgalopin/LegGoogleChartsBundle.png?branch=master)](http://travis-ci.org/tgalopin/LegGoogleChartsBundle)
+[![Build Status](https://secure.travis-ci.org/tgalopin/SimHashPhp.png?branch=master)](http://travis-ci.org/tgalopin/SimHashPhp)
 
 License
 -------
