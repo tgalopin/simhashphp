@@ -7,6 +7,9 @@ What is SimHashPhp ?
 SimHashPhp is a PHP library that port the SimHash algorithm created by Moses Charikar.
 This algorithm provide an efficient way to compare two texts or two data sets.
 
+See ["SimHash or the way to compare quickly two datasets"](http://titouangalopin.com/articles/simhash-or-the-way-to-compare-quickly-two-datasets)
+for more informations.
+
 [![Build Status](https://secure.travis-ci.org/tgalopin/SimHashPhp.png?branch=master)](http://travis-ci.org/tgalopin/SimHashPhp)
 
 How to use it ?
