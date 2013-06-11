@@ -15,18 +15,28 @@ for more informations.
 How to use it ?
 ---------------
 
+The library use PSR-0 naming convention so you can easily use it with an autoloader.
+However, basically, you can use a simple require:
+
 ``` php
 <?php
 
+require 'Leg/SimHash/SimHash.php';
+require 'Leg/SimHash/SimHashFactory.php';
+
+use Leg\SimHash\SimHash;
+use Leg\SimHash\SimHashFactory;
+
+
 $factory = new SimHashFactory();
 
-$hash1 = $factory->run('Mary-jane is very tall. She was in the 9th grade.');
-$hash2 = $factory->run('John is in high school. He is not so tall.');
+$fingerprint1 = $factory->run('Mary-jane is very tall. She was in the 9th grade.');
+$fingerprint2 = $factory->run('John is in high school. He is not so tall.');
 
 // This method return a float between 0 and 1
 // where 0 is completely different strings and
 // 1 is completely equals strings.
-$hash1->compareWith($hash2);
+$fingerprint1->compareWith($fingerprint2);
 ```
 
 License
