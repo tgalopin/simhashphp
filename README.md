@@ -1,6 +1,10 @@
 SimHashPhp
 ==========
 
+> **Note** : You are reviewing the version 1 of SimHashPhp. Please use the lastest version
+> (https://github.com/tgalopin/SimHashPhp) for any new project. This documentation exists solely for
+> maintenance purposes.
+
 What is SimHashPhp ?
 --------------------
 
@@ -10,7 +14,7 @@ This algorithm provide an efficient way to compare two texts or two data sets.
 See ["SimHash or the way to compare quickly two datasets"](http://titouangalopin.com/blog/articles/2014/05/simhash-or-the-way-to-compare-quickly-two-datasets)
 for more informations.
 
-[![Build Status](https://secure.travis-ci.org/tgalopin/SimHashPhp.png?branch=master)](http://travis-ci.org/tgalopin/SimHashPhp)
+[![Build Status](https://travis-ci.org/tgalopin/SimHashPhp.svg?branch=1.0-security)](http://travis-ci.org/tgalopin/SimHashPhp)
 
 How to use it ?
 ---------------
