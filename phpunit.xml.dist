@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit bootstrap="./Leg/SimHash/Tests/bootstrap/autoload.php" colors="false">
+<phpunit bootstrap="./Tga/SimHash/Tests/bootstrap/autoload.php" colors="false">
     <testsuites>
         <testsuite name="SimHashPhp test suite">
-            <directory suffix="Test.php">./Leg/SimHash/Tests</directory>
+            <directory suffix="Test.php">./Tga/SimHash/Tests</directory>
         </testsuite>
     </testsuites>
 </phpunit>

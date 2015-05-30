@@ -1,21 +1,24 @@
 {
-    "name": "leg/simhash-php",
+    "name": "tga/simhash-php",
     "description": "SimHash similarities algorithm implementation for PHP 5.3",
-    "keywords": ["Algorithm", "SimHash", "Similarities"],
-    "homepage": "http://titouangalopin.com/",
-    "license": "Creative Commons BY-NC 3.0",
+    "keywords": ["algorithm", "simhash", "similarities", "similarity", "difference"],
+    "homepage": "http://titouangalopin.com",
+    "license": "MIT",
     "authors": [
         {
             "name": "Titouan Galopin",
             "email": "galopintitouan@gmail.com"
         }
     ],
+    "replace": {
+        "leg/simhash-php": "*"
+    },
     "require": {
         "php": ">=5.3"
     },
     "autoload": {
         "psr-0": {
-            "Leg\\SimHash": ""
+            "Tga\\SimHash": "lib"
         }
     }
 }
