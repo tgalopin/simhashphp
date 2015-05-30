@@ -11,12 +11,6 @@
 
 namespace Tga\SimHash;
 
-use Tga\SimHash\Tokenizer\String32Tokenizer;
-use Tga\SimHash\Tokenizer\String64Tokenizer;
-use Tga\SimHash\Tokenizer\TokenizerInterface;
-use Tga\SimHash\Vectorizer\DefaultVectorizer;
-use Tga\SimHash\Vectorizer\VectorizerInterface;
-
 /**
  * @author Titouan Galopin <http://titouangalopin.com/>
  */
@@ -24,14 +18,15 @@ class SimHash
 {
     const SIMHASH_32 = 32;
     const SIMHASH_64 = 64;
+    const SIMHASH_128 = 128;
 
     /**
-     * @var TokenizerInterface[]
+     * @var Tokenizer\TokenizerInterface[]
      */
     protected $tokenizers;
 
     /**
-     * @var VectorizerInterface
+     * @var Vectorizer\VectorizerInterface
      */
     protected $vectorizer;
 
@@ -42,11 +37,12 @@ class SimHash
     public function __construct()
     {
         $this->tokenizers = [
-            new String64Tokenizer(),
-            new String32Tokenizer()
+            new Tokenizer\String64Tokenizer(),
+            new Tokenizer\String128Tokenizer(),
+            new Tokenizer\String32Tokenizer()
         ];
 
-        $this->vectorizer = new DefaultVectorizer();
+        $this->vectorizer = new Vectorizer\DefaultVectorizer();
     }
 
     /**
@@ -91,13 +87,13 @@ class SimHash
     /**
      * @param Tokenizer\TokenizerInterface $tokenizer
      */
-    public function addTokenizer(TokenizerInterface $tokenizer)
+    public function addTokenizer(Tokenizer\TokenizerInterface $tokenizer)
     {
         $this->tokenizers[] = $tokenizer;
     }
 
     /**
-     * @return VectorizerInterface
+     * @return Vectorizer\VectorizerInterface
      */
     public function getVectorizer()
     {
@@ -105,9 +101,9 @@ class SimHash
     }
 
     /**
-     * @param VectorizerInterface $vectorizer
+     * @param Vectorizer\VectorizerInterface $vectorizer
      */
-    public function setVectorizer(VectorizerInterface $vectorizer)
+    public function setVectorizer(Vectorizer\VectorizerInterface $vectorizer)
     {
         $this->vectorizer = $vectorizer;
     }
@@ -120,7 +116,7 @@ class SimHash
      *
      * @param mixed $element
      * @param int $size
-     * @return null|TokenizerInterface
+     * @return null|Tokenizer\TokenizerInterface
      */
     protected function findTokenizer($element, $size)
     {
@@ -134,7 +130,7 @@ class SimHash
         }
 
         if (! $tokenizer) {
-            $availableTokenizers = array_map(function(TokenizerInterface $tokenizer) {
+            $availableTokenizers = array_map(function(Tokenizer\TokenizerInterface $tokenizer) {
                 return str_replace('Tga\\SimHash\\Tokenizer\\', '', get_class($tokenizer));
             }, $this->tokenizers);
 

@@ -72,7 +72,7 @@ class Fingerprint
      */
     public function getBinary()
     {
-        return decbin($this->decimalValue);
+        return str_pad(decbin($this->decimalValue), $this->size, '0', STR_PAD_LEFT);
     }
 
     /**

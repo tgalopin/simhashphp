@@ -30,7 +30,7 @@ class GaussianComparator implements ComparatorInterface
     /**
      * @param int $deviation
      */
-    public function __construct($deviation = 3)
+    public function __construct($deviation = 4)
     {
         $this->deviation = $deviation;
     }

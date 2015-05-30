@@ -14,7 +14,8 @@
         "leg/simhash-php": "*"
     },
     "require": {
-        "php": ">=5.3"
+        "php": ">=5.3",
+        "cocur/slugify": "1.*"
     },
     "autoload": {
         "psr-0": {
