@@ -33,4 +33,4 @@ var_dump($fp1->getBinary());
 var_dump($fp2->getBinary());
 
 // Index between 0 and 1 : 0.80073740291681
-var_dump($comparator->icompare($fp1, $fp2));
+var_dump($comparator->compare($fp1, $fp2));
