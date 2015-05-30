@@ -1,14 +1,17 @@
-SimHashPhp
+SimHashPHP
 ==========
 
-> This is the second version of SimHashPhp. If you are using the version 1 and don't want to
+> This is the second version of SimHashPHP. If you are using the version 1 and don't want to
 > update your code, please refer to the `1.0-security` branch (https://github.com/tgalopin/SimHashPhp/tree/1.0-security).
 > The 1.0 branch will be maintained until the release of a v3 but only the v2 will have lastest features.
 
-What is SimHashPhp ?
+> The version 2 of SimHashPHP is currently in development. Please use the version 1 if you need to start a project now
+> (https://github.com/tgalopin/SimHashPhp/tree/1.0-security).
+
+What is SimHashPHP ?
 --------------------
 
-SimHashPhp is a PHP library that port the SimHash algorithm in PHP.
+SimHashPHP is a PHP library that port the SimHash algorithm in PHP.
 This algorithm, created by Moses Charikar, provides an efficient way to compute a similarity index between two texts.
 It is used by Google internally to detect dupplicate content.
 
@@ -78,7 +81,7 @@ This library is under the MIT license (see LICENSE.md)
 About
 -----
 
-SimHashPhp is mainly developed by Titouan Galopin.
+SimHashPHP is mainly developed by Titouan Galopin.
 
 Reporting an issue or a feature request
 ---------------------------------------
