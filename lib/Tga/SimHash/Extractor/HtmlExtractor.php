@@ -86,7 +86,7 @@ class HtmlExtractor extends SimpleTextExtractor
 
         // Extract raw text
         /** @var \DOMElement $node */
-        $node = $document->getElementsByTagName('body')[0];
+        $node = $document->getElementsByTagName('body')->item(0);
 
         if (! $node) {
             throw new \RuntimeException();
