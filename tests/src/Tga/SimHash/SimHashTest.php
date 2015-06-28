@@ -48,7 +48,7 @@ class SimHashTest extends \PHPUnit_Framework_TestCase
         $fp1 = $simhash->hash($extractor->extract($text1));
         $fp2 = $simhash->hash($extractor->extract($text2));
 
-        self::assertLessThan(0.8, $comparator->compare($fp1, $fp2));
+        self::assertLessThan(0.9, $comparator->compare($fp1, $fp2));
         self::assertGreaterThan(0.1, $comparator->compare($fp1, $fp2));
     }
 

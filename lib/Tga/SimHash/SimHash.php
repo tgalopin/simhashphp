@@ -11,6 +11,9 @@
 
 namespace Tga\SimHash;
 
+use Tga\SimHash\Extractor\HtmlExtractor;
+use Tga\SimHash\Extractor\SimpleTextExtractor;
+
 /**
  * @author Titouan Galopin <http://titouangalopin.com/>
  */
@@ -46,7 +49,35 @@ class SimHash
     }
 
     /**
-     * Compute the similarity hash on the given element
+     * Compute the similarity hash on the given HTML document
+     *
+     * @param string $html
+     * @param int $size
+     * @return Fingerprint
+     */
+    public function hashHtml($html, $size = self::SIMHASH_64)
+    {
+        $extractor = new HtmlExtractor();
+
+        return $this->hash($extractor->extract($html), $size);
+    }
+
+    /**
+     * Compute the similarity hash on the given text
+     *
+     * @param string $text
+     * @param int $size
+     * @return Fingerprint
+     */
+    public function hashText($text, $size = self::SIMHASH_64)
+    {
+        $extractor = new SimpleTextExtractor();
+
+        return $this->hash($extractor->extract($text), $size);
+    }
+
+    /**
+     * Compute the similarity hash on the given elements
      *
      * @param array $elements
      * @param int $size

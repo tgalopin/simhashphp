@@ -23,7 +23,7 @@ class SimpleTextExtractorTest extends \PHPUnit_Framework_TestCase
         $extractor = new SimpleTextExtractor();
 
         static::assertEquals(
-            [ 'mary', 'very', 'tall', 'she', 'was', 'the', '9th', 'grade' ],
+            [ 'mary', 'is', 'very', 'tall', 'she', 'was', 'in', 'the', '9th', 'grade' ],
             $extractor->extract('Mary is very tall. She was in the 9th grade.')
         );
     }

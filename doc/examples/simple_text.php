@@ -23,11 +23,10 @@ average of 69.86. He was chosen as one of the Wisden Cricketers of the Year.
 EOT;
 
 $simhash = new \Tga\SimHash\SimHash();
-$extractor = new \Tga\SimHash\Extractor\SimpleTextExtractor();
 $comparator = new Tga\SimHash\Comparator\GaussianComparator(3);
 
-$fp1 = $simhash->hash($extractor->extract($text1), \Tga\SimHash\SimHash::SIMHASH_64);
-$fp2 = $simhash->hash($extractor->extract($text2), \Tga\SimHash\SimHash::SIMHASH_64);
+$fp1 = $simhash->hashText($text1);
+$fp1 = $simhash->hashText($text2);
 
 var_dump($fp1->getBinary());
 var_dump($fp2->getBinary());

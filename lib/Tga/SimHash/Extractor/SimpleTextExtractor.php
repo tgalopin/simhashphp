@@ -32,15 +32,6 @@ class SimpleTextExtractor implements ExtractorInterface
         $slugify = new Slugify();
         $slugifiedText = $slugify->slugify($text);
 
-        $words = explode('-', $slugifiedText);
-        $content = [];
-
-        foreach ($words as $word) {
-            if (strlen($word) > 2) {
-                $content[] = $word;
-            }
-        }
-
-        return $content;
+        return explode('-', $slugifiedText);
     }
 }
