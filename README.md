@@ -5,9 +5,6 @@ SimHashPHP
 > update your code, please refer to the `1.0-security` branch (https://github.com/tgalopin/SimHashPhp/tree/1.0-security).
 > The 1.0 branch will be maintained until the release of a v3 but only the v2 will have lastest features.
 
-> The version 2 of SimHashPHP is currently in development. Please use the version 1 if you need to start a project now
-> (https://github.com/tgalopin/SimHashPhp/tree/1.0-security).
-
 What is SimHashPHP ?
 --------------------
 
