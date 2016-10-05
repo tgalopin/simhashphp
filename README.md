@@ -12,8 +12,7 @@ SimHashPHP is a PHP library that port the SimHash algorithm in PHP.
 This algorithm, created by Moses Charikar, provides an efficient way to compute a similarity index between two texts.
 It is used by Google internally to detect dupplicate content.
 
-See ["SimHash or the way to compare quickly two datasets"](http://titouangalopin.com/blog/articles/2014/05/simhash-or-the-way-to-compare-quickly-two-datasets)
-for more informations.
+See ["SimHash or the way to compare quickly two datasets"](https://titouangalopin.com/2014/06/29/simhash/) for more informations.
 
 [![Build Status](https://secure.travis-ci.org/tgalopin/SimHashPhp.png?branch=master)](http://travis-ci.org/tgalopin/SimHashPhp)
 
@@ -28,8 +27,7 @@ composer require tga/simhash-php
 
 Once installed, include `vendor/autoload.php` to load the library.
 
-The concept of SimHash is described in [this article](http://titouangalopin.com/blog/articles/2014/05/simhash-or-the-way-to-compare-quickly-two-datasets).
-Here are few examples:
+The concept of SimHash is described in [this article](https://titouangalopin.com/2014/06/29/simhash/). Here are few examples:
 
 ``` php
 <?php
