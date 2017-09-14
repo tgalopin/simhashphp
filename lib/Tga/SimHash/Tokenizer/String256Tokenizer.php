@@ -12,7 +12,7 @@
 namespace Tga\SimHash\Tokenizer;
 
 /**
- * Tokenizer for strings that generate 128 bit tokens.
+ * Tokenizer for strings that generate 256 bit tokens.
  *
  * @author Titouan Galopin <http://titouangalopin.com/>
  */
@@ -28,9 +28,9 @@ class String128Tokenizer implements TokenizerInterface
      */
     public function tokenize($element)
     {
-        $hash = md5($element);
+        $hash = hash('sha256', $element);
         $hash = str_replace(self::$search, self::$replace, $hash);
-        $hash = str_pad($hash, 512, '0', STR_PAD_LEFT);
+        $hash = str_pad($hash, 256, '0', STR_PAD_LEFT);
         return $hash;
     }
 
@@ -53,6 +53,6 @@ class String128Tokenizer implements TokenizerInterface
      */
     public function supportsSize($size)
     {
-        return $size === 128;
+        return $size === 256;
     }
 }

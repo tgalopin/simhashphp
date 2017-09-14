@@ -24,19 +24,19 @@ class Fingerprint
     /**
      * @var float
      */
-    protected $decimalValue;
+    protected $value;
 
 
     /**
      * Constructor
      *
      * @param int $size
-     * @param float $decimalValue
+     * @param string $value
      */
-    public function __construct($size, $decimalValue)
+    public function __construct($size, $value)
     {
         $this->size = $size;
-        $this->decimalValue = (float) $decimalValue;
+        $this->value = $value;
     }
 
     /**
@@ -56,32 +56,13 @@ class Fingerprint
     }
 
     /**
-     * Get the decimal value
-     *
-     * @return float
-     */
-    public function getDecimal()
-    {
-        return $this->decimalValue;
-    }
-
-    /**
      * Get the binary value as a string
      *
      * @return string
      */
     public function getBinary()
     {
-        return str_pad(decbin($this->decimalValue), $this->size, '0', STR_PAD_LEFT);
+        return $this->value;
     }
 
-    /**
-     * Get the hexadecimal value as a string
-     *
-     * @return string
-     */
-    public function getHexa()
-    {
-        return dechex($this->decimalValue);
-    }
 }
