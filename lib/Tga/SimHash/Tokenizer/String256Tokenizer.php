@@ -16,7 +16,7 @@ namespace Tga\SimHash\Tokenizer;
  *
  * @author Titouan Galopin <http://titouangalopin.com/>
  */
-class String128Tokenizer implements TokenizerInterface
+class String256Tokenizer implements TokenizerInterface
 {
  
     protected static $search = array('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f');
