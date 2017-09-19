@@ -36,7 +36,7 @@ class GaussianComparator implements ComparatorInterface
     }
 
     /**
-     * Count Differences beetwin fingerprints.
+     * Count differences between fingerprints.
      *
      * @param int $size
      * @param Fingerprint $fp1
