@@ -22,9 +22,9 @@ class Fingerprint
     protected $size;
 
     /**
-     * @var float
+     * @var string
      */
-    protected $value;
+    private $value;
 
 
     /**
