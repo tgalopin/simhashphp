@@ -43,7 +43,7 @@ class GaussianComparator implements ComparatorInterface
      * @param Fingerprint $fp2
      * @return int
      */
-    private static function countDifferences(int $size, Fingerprint $fp1, Fingerprint $fp2) {
+    private static function countDifferences($size, Fingerprint $fp1, Fingerprint $fp2) {
         $val1 = $fp1->getBinary();
         $val2 = $fp2->getBinary();
 
