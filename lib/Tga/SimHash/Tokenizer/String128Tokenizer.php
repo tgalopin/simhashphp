@@ -29,7 +29,7 @@ class String128Tokenizer implements TokenizerInterface
     {
         $hash = md5($element);
         $hash = str_replace(self::$search, self::$replace, $hash);
-        $hash = str_pad($hash, 512, '0', STR_PAD_LEFT);
+        $hash = str_pad($hash, 128, '0', STR_PAD_LEFT);
         return $hash;
     }
 
