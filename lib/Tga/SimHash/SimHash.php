@@ -22,6 +22,8 @@ class SimHash
     const SIMHASH_32 = 32;
     const SIMHASH_64 = 64;
     const SIMHASH_128 = 128;
+    const SIMHASH_256 = 256;
+    const SIMHASH_512 = 512;
 
     /**
      * @var Tokenizer\TokenizerInterface[]
@@ -42,6 +44,8 @@ class SimHash
         $this->tokenizers = [
             new Tokenizer\String64Tokenizer(),
             new Tokenizer\String128Tokenizer(),
+            new Tokenizer\String256Tokenizer(),
+            new Tokenizer\String512Tokenizer(),
             new Tokenizer\String32Tokenizer()
         ];
 
@@ -104,7 +108,7 @@ class SimHash
             }
         }
 
-        return new Fingerprint($size, bindec(implode('', $fingerprint)));
+        return new Fingerprint($size, implode('', $fingerprint));
     }
 
     /**

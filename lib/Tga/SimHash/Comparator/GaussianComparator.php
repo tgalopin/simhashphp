@@ -36,6 +36,28 @@ class GaussianComparator implements ComparatorInterface
     }
 
     /**
+     * Count differences between fingerprints.
+     *
+     * @param int $size
+     * @param Fingerprint $fp1
+     * @param Fingerprint $fp2
+     * @return int
+     */
+    private static function countDifferences($size, Fingerprint $fp1, Fingerprint $fp2) {
+        $val1 = $fp1->getBinary();
+        $val2 = $fp2->getBinary();
+
+        $ret = 0;
+        for ($i = 0; $i < $size; $i++) {
+            if ($val1[$i] != $val2[$i]) {
+                $ret++;
+            }
+        }
+
+        return $ret;
+    }
+
+    /**
      * Compare the two fingerprints and return a similarity index between 0 and 1.
      *
      * @param Fingerprint $fp1
@@ -51,7 +73,7 @@ class GaussianComparator implements ComparatorInterface
             ));
         }
 
-        $countDifferences = substr_count(decbin($fp1->getDecimal() ^ $fp2->getDecimal()), '1');
+        $countDifferences = GaussianComparator::countDifferences($fp1->getSize(), $fp1, $fp2);
 
         return $this->computeSimilarityIndex($countDifferences);
     }

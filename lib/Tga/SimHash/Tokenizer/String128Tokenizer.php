@@ -18,13 +18,19 @@ namespace Tga\SimHash\Tokenizer;
  */
 class String128Tokenizer implements TokenizerInterface
 {
+    private static $search = array('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f');
+    private static $replace = array('0000','0001','0010','0011','0100','0101','0110','0111','1000','1001','1010','1011','1100','1101','1110','1111');
+    
     /**
      * @param string $element
      * @return string
      */
     public function tokenize($element)
     {
-        return str_pad(base_convert(md5($element), 16, 2), 128, '0', STR_PAD_LEFT);
+        $hash = md5($element);
+        $hash = str_replace(self::$search, self::$replace, $hash);
+        $hash = str_pad($hash, 128, '0', STR_PAD_LEFT);
+        return $hash;
     }
 
     /**
