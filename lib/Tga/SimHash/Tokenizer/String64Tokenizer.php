@@ -55,7 +55,6 @@ class String64Tokenizer implements TokenizerInterface
         return $size === 64;
     }
 
-
     /**
      * Compute the CRC64 algorithm on the given string
      *

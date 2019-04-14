@@ -26,7 +26,6 @@ class Fingerprint
      */
     protected $decimalValue;
 
-
     /**
      * Constructor
      *
@@ -73,15 +72,5 @@ class Fingerprint
     public function getBinary()
     {
         return str_pad(decbin($this->decimalValue), $this->size, '0', STR_PAD_LEFT);
-    }
-
-    /**
-     * Get the hexadecimal value as a string
-     *
-     * @return string
-     */
-    public function getHexa()
-    {
-        return dechex($this->decimalValue);
     }
 }
